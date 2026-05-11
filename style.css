@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400..600;1,400..600&display=swap');
+
+* { box-sizing: border-box; }
+
+html, body {
+	width: 100vw;
+	margin: 0;
+	padding: 0px;
+	overflow-x: clip;
+	overscroll-behavior: none;
+}
+
+
+body {
+
+	--strokeDashoffset: 0;
+	--tabletVerticaloffset: 0px;
+
+	background: #131417;
+	font-size: 1.2rem;
+	font-weight: 400;
+	font-style: normal;
+	color: #FFFFFF;
+	
+}
+
+main {
+
+   	display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 740px;
+    height: 2000px;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    visibility: hidden;
+		overscroll-behavior: none;
+
+    cards {
+
+        display: block;
+        width: 300px;
+        position: absolute;
+        top: 0px;
+        z-index: 10;
+
+        @media ( width >= 576px )  { transform: translateX(4vw); }
+
+        cardWrapper {
+            
+            display: block;
+            position: relative;
+            width: 300px;
+            height: 450px;
+            border-radius: 20px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            overflow: clip;
+
+            @media ( width >= 576px )  {
+                &:nth-child(odd) { transform: translateX(6vw); }
+                &:nth-child(even) { transform: translateX(-3w); }
+            }
+                        
+            &::before {
+                position: absolute;
+                content: " ";
+                display: block;
+                z-index: 0;
+                width: inherit;
+                height: inherit;
+                border-radius: inherit;
+                background-color: #0004;
+                backdrop-filter: blur(8px);
+            
+            }
+            &::after {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                z-index: 0;
+                content: " ";
+                display: block;
+                width: inherit;
+                height: 450px;
+                border-radius: 20px;
+                background-image: url('data:image/svg+xml,<svg width="300" height="450" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="cl2" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1" gradientTransform="rotate(45)"><stop offset="20%" stop-color="%23b169db"/><stop offset="45%" stop-color="%23f7d152"/><stop offset="65%" stop-color="%2346cf71"/><stop offset="85%" stop-color="%230fbffa"/></linearGradient></defs><path fill="url(%23cl2)" stroke="none" d="M 20,0C 9,0 0,9 0,20v 410c 0,11 9,20 20,20h 130 130c 11,0 20,-9 20,-20V 20C 300,9 291,0 280,0Zm 1,1h 161l 95,2c 12,1 19,10 19,20L 299,175v 254c 0,11 -9,20 -20,20H 118l -95,-3c -10,0 -20,-8 -20,-20L 1,275V 22C 1,11 10,1 21,1Z" /></svg>');
+                filter: blur(1px) saturate(1.2) brightness(1.2);
+                opacity: 0.85;
+            }
+
+            card {
+
+                display: block;
+                width: 300px;
+                height: 450px;
+                border-radius: 20px;
+                background-color: oklab(27.722% -0.00023 -0.01543 / 0.733);
+                background: radial-gradient(closest-corner, oklab(27.722% -0.00023 -0.01543 / 0.067) 10%, oklab(27.722% -0.00023 -0.01543 / 0.733) 90%),
+                linear-gradient(50deg, oklab(74.255% -0.1471 0.04911 / 0.133) 0%, transparent 25%, transparent 75%,oklab(66.807% 0.13215 -0.11718 / 0.133) 100%);
+                color: #FFFFFF;
+                position: relative;
+                mask-composite: subtract;
+							
+
+                &#codepen {
+                    background: oklab(50.301% -0.00032 -0.00343 / 0.4);
+                    background: radial-gradient(closest-corner, oklab(50.301% -0.00032 -0.00343 / 0.047) 10%, oklab(50.301% -0.00032 -0.00343 / 0.4) 90%),
+                    linear-gradient(50deg, oklab(74.255% -0.1471 0.04911 / 0.07) 0%, transparent 25%, transparent 75%,oklab(66.807% 0.13215 -0.11718 / 0.133) 100%);
+                    mask-image: url(#block), url(#codepenMask);
+                    &::before { mask: url(#codepenMask2); }
+                }
+
+                &#html { mask-image: url(#block), url(#htmlMask); &::before { mask: url(#htmlMask2); } }
+                &#css { mask-image: url(#block), url(#cssMask); &::before { mask: url(#cssMask2); } }
+                &#js { mask-image: url(#block), url(#jsMask); &::before { mask: url(#jsMask2); } }
+ 
+                &::before {
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+                    z-index: 0;
+                    display: block;
+                    content: "";
+                    width: 300px;
+                    height: 450px;
+                    background: linear-gradient(-45deg, #912acd 20%, #e6b71d, #16a242, #03b0ea 70%);
+                    opacity: 0.6;
+				}
+
+                foreignobject {
+                    color: #FFF;
+                }
+
+                header, code {
+                    display: block;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 310px;
+                    padding: 20px;
+                    text-overflow: clip;
+                    background-image: linear-gradient(-45deg, #912acd 20%, #e6b71d, #16a242, #03b0ea 70%);
+                    background-clip: text;
+                    color: transparent;
+                    text-shadow: none;
+                    text-align: left;
+                    filter: brightness(2);
+                    margin-right: auto;
+                    
+                    &.type {
+                        font-family: "Source Code Pro", monospace;
+                        font-optical-sizing: auto;
+                        font-style: normal;
+                    }
+
+                }
+
+                header {
+                    font-size: 34px;0
+                    font-weight: 400;
+                }
+                code {
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 20px;
+                    dl { width: 260px; }
+                    dd { margin-left: 20px; }
+
+                    div[aria-hidden="true"] {
+                        position: unset!important;
+                    }
+
+                }
+                        
+            }
+        }
+    } /* #cards */
+
+    #world3d {
+
+        position: fixed;
+        top: var(--tabletVerticaloffset);
+        z-index: -1;
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+        shape-rendering: crispEdges;
+        overflow: visible;
+        width: 90vw;
+        max-width: 1200px;
+        padding-top: 5vw;
+
+        #tablet {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            transform-origin: 0% 50%;
+            -webkit-transform: rotateY(20deg);
+            transform: rotateY(20deg);
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 150vh;
+            padding: 40px;
+            padding-left: 140px;
+            background-color: oklab(23.86% 0.00399 -0.01472);
+            background: linear-gradient(109.61deg, oklab(35.777% 0.00155 -0.01572) 4.26%, oklab(17.28% -0.00043 -0.00445) 84.84%);
+            border-radius: 30px;
+            opacity: 0.25;
+
+            &:before {
+                position: absolute;
+                left: 120px;
+                top: 20px;
+                right: 20px;
+                bottom: 20px;
+                content: "";
+                display: block;
+                background-color: #131417;
+                border: thin solid #565a6488;
+                border-radius: 20px;
+            }
+					
+        }
+
+    } /* #world3d */
+
+    #svgPaths {
+			
+            position: absolute;
+            top: 75px;
+            z-index: 5;
+            width: 740px;
+						max-width: 100%;
+						overflow-x: clip;
+            height: 2000px;
+            filter: blur(1px);
+
+            @media ( width >= 576px )  {
+                -webkit-transform: translateX(6vw);
+                transform: translateX(6vw);
+            }
+
+        use {
+
+            fill: none;
+            stroke: url(#cl1);
+            stroke-linecap: round;
+            stroke-width: var(--dot);
+            stroke-dashoffset: var(--strokeDashoffset);
+
+            &[href="#linePath01"] {
+                --dot: 20px; --gap: 50px;
+                stroke-dasharray: var(--dot) var(--gap) 120px var(--gap) var(--dot) var(--gap) 300px var(--gap) var(--dot) var(--gap) 150px var(--gap) var(--dot) 20000px;
+            }
+            &[href="#linePath02"] {
+                --dot: 34px; --gap: 60px;
+                stroke-dasharray: var(--dot) var(--gap) 120px var(--gap) var(--dot) var(--gap) 300px var(--gap) var(--dot) var(--gap) 150px var(--gap) var(--dot) 20000px;
+            }
+            &[href="#linePath03"] {
+                --dot: 25px; --gap: 40px;
+                stroke-dasharray: var(--dot) var(--gap) 120px var(--gap) var(--dot) var(--gap) 250px var(--gap) var(--dot) var(--gap) 150px var(--gap) var(--dot) 20000px;
+            }
+            &[href="#linePath04"] {
+                --dot: 40px; --gap: 70px;
+                stroke-dasharray: var(--dot) var(--gap) 100px var(--gap) var(--dot) var(--gap) 200px var(--gap) var(--dot) 20000px;
+            }
+
+        }
+
+    } /* #svgPath */
+	
+} /* main */
