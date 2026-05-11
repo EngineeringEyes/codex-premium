@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>codePen GSAP scrollTrigger background</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <main>
+
+        <cards>
+            
+            <cardWrapper>
+                <card id="codepen">
+                    <header class="type"><span>The best place to build, test, and discover front-end code.</span></header>
+                </card>
+            </cardWrapper>
+            <cardWrapper>
+                <card id="html">
+                    <code id="c0"> 
+                        <dl>
+                            <dt><span class="tp wd">&lt;</span><span class="tp">svg id="svgPaths" width="740"</span><br> <span class="tp">height="2000" xmlns="http://</span><br><span class="tp">www.w3.org/2000/svg"</span><span class="tp wd">&gt;</span></dt><br>
+                            <dd></span>
+                                <span class="tp wd">&lt;</span><span class="tp">href="#linePath01" </span><span class="tp wd">/&gt;</span><br>
+                                <span class="tp wd">&lt;</span><span class="tp">use href="#linePath02" </span><span class="tp wd">/&gt;</span><br>
+                                <span class="tp wd">&lt;</span><span class="tp">href="#linePath03" </span><span class="tp wd">/&gt;</span><br>
+                                <span class="tp wd">&lt;</span><span class="tp">href="#linePath04" /</span><span class="tp wd">&gt;</span><br>
+                            </dd><br>
+                            <dt class="tp">&lt;/svg></dt>
+                        </dl>
+                    </code>
+                </card>
+            </cardWrapper>
+            <cardWrapper>
+                <card id="css">
+                    <code class="type">
+                        <dl>
+                            <dt><span class="tp">* { box-sizing: border-box; }</span></dt><br>
+                            <dt><span class="tp">html, body {</span></dt>
+                            <dd>
+                                <span class="tp">width: 100%;</span><br>
+                                <span class="tp">margin: 0;</span><br>
+                                <span class="tp">padding: 0px;</span><br>
+                            </dd>
+                           <dt><span class="tp">}</span></dt><br>
+
+                            <dt><span class="tp">body {</span></dt><br>
+                            <dd><span class="tp">--strokeDashoffset: 0;</span></dd>
+                        </dl>
+                    </code>
+                </card>
+            </cardWrapper>
+            <cardWrapper> 
+                <card id="js">
+                    <code class="type">
+                        <dl>
+                            <dt><span class="tp">scrollTrigger: {</span></dt><br>
+                            <dd>
+                                <span class="tp">trigger: "body",</span><br>
+                                <span class="tp">start: "top top",</span><br><br>
+                                <span class="tp">end: "bottom bottom",</span><br>           
+                                <span class="tp">onUpdate: (self) => {</span><br><br>
+                                <dl>
+                                    <dd>
+                                        <span class="tp">let scrollProgress =<br> - self.progress;</span><br><br>
+                                        <span class="tp">gsap.set("body",</span><br>
+                                        <span class="tp"> {</span>
+                                    </dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                    </code>
+                </card>
+            </cardWrapper>
+
+        </cards><!-- #cards-->
+
+
+        <div id="world3d">
+            <div id="tablet"></div>
+        </div><!-- #world3d -->
+
+        <svg id="svgPaths" width="740" height="2000" xmlns="http://www.w3.org/2000/svg">
+            <use href="#linePath01" />
+            <use href="#linePath02" />
+            <use href="#linePath03" />
+            <use href="#linePath04" />
+        </svg>
+
+    </main>
+
+
+<!-- SVG paths and filters -->
+<svg width="0" width="0" role="none">
+
+    <defs>
+
+        <path id="linePath01" d="m 106,45h 375c 114,0 226,128 226,235v 236c 0,136 -122,222 -224,221l -182,-2c -89,1 -141,42 -142,158l -2,204c -1,117 37,173 134,173h 186c 110,-3 230,111 230,220v 242c 0,113 -125,225 -248,225H 105" />   
+        <path id="linePath02" d="m 33,85h 444c 96,0 190,107 190,201v 224c 0,116 -98,188 -190,187l -192,-2c -92,0 -166,75 -166,168v 278c 0,94 74,169 166,169h 194c 92,0 188,94 188,188v 228c 0,94 -104,191 -214,191H 105" />
+        <path id="linePath03" d="m 155,127h 308c 94,0 162,86 162,177v 178c 0,109 -50,174 -166,173L 277,653C 158,653 77,762 77,849v 302c 0,118 107,196 180,197l 204,4c 92,0 164,67 164,160v 200c 0,91 -89,163 -188,163H 105" />
+        <path id="linePath04" d="m 283,173c 2,0 165,0 165,0C 544,175 577,238 577,330v 156c 0,94 -48,126 -140,125L 269,609C 167,602 29,702 29,851v 312c 0,111 101,235 242,235h 162c 109,1 144,49 144,136v 162c 0,73 -53,130 -118,130l -353,1" />
+
+        <path id="codepenIcon" fill="#FFFFFF" d="m 214,306 -57,37c -1,0 -2,2 -2,3v 40c 0,1 1,2 2,3l 57,40c 2,1 6,1 7,0l 58,-40c 1,0 2,-1 2,-3v -40c 0,-2 -2,-3 -2,-3l -57,-37c -4,-3 -8,0 -8,0zm -2,13 1,26 -24,16 -19,-14zm 10,0 43,28 -19,14 -24,-16zm -6,35 19,14 -19,14 -19,-14zm -52,3 14,9 -14,9zm 106,0v 19l -14,-9zm -84,15 24,16v 26l -42,-28zm 59,0 17,14 -42,28v -26z" />
+        <path id="htmlIcon" fill="#FFFFFF" d="m 94,318v 109h 16v -47h 12v 47h 16V 318h -16v 45h -12v -45zm 47,0v 18h 14v 92h 15v -92h 14v -18zm 45,0v 109h 15v -54l 7,41h 12l 5,-42v 55h 15V 318h -16l -11,72 -11,-72zm 62,0 1,109h 34v -19h -19v -91z" />
+        <path id="cssIcon" fill="#FFFFFF" d="m 94,398c 0,26 18,31 30,31 9,0 32,-3 31,-34h -19c 0,23 -22,21 -22,0v -43c 0,-25 22,-21 22,1h 18c 1,-32 -22,-35 -30,-35 -10,0 -30,3 -30,32zm 105,-1c 0,22 -23,18 -23,-2h -18c 0,0 1,33 30,33 9,0 30,-4 30,-31 0,-42 -39,-26 -39,-50 0,-16 22,-20 22,3h 18c -2,-21 -11,-31 -30,-31 -9,0 -28,0 -29,28 -1,40 39,23 39,50zm 62,0c 0,21 -22,22 -23,-2h -17c 0,0 0,33 30,33 18,0 30,-9 30,-31 0,-41 -39,-27 -39,-50 0,-15 22,-20 22,3h 18c -1,-22 -13,-31 -27,-31 -11,0 -32,1 -33,27 1,38 39,25 39,51z" />
+        <path id="jsIcon" fill="#FFFFFF" d="m 262,395c 0,20 -22,20 -22,-1h -18c 0,14 5,31 28,31 16,0 30,-9 30,-31 0,-41 -39,-26 -39,-49 0,-16 20,-19 20,3h 18c -1,-27 -14,-30 -27,-30 -19,-1 -29,8 -29,27 -2,38 39,24 39,50zm -67,-76v 74c 0,22 -22,20 -22,-1h -19c -1,26 15,34 30,34 27,0 30,-20 30,-30v -77z" />
+
+        <mask id="block"><path fill="#FFFFFF" d="M 0,0 H 300 V 450 H 0 Z" /></mask>
+        <mask id="codepenMask"><use href="#codepenIcon" /></mask>
+        <mask id="htmlMask"><use href="#htmlIcon" /></mask>
+        <mask id="cssMask"><use href="#cssIcon" /></mask>
+        <mask id="jsMask"><use href="#jsIcon" /></mask>
+        <mask id="codepenMask2"><use href="#codepenIcon" stroke="#FFFFFF" stroke-width="4" /></mask>
+        <mask id="htmlMask2"><use href="#htmlIcon" stroke="#FFFFFF" stroke-width="4" /></mask>
+        <mask id="cssMask2"><use href="#cssIcon" stroke="#FFFFFF" stroke-width="4" /></mask>
+        <mask id="jsMask2"><use href="#jsIcon" stroke="#FFFFFF" stroke-width="4" /></mask>
+
+        <linearGradient id="cl1" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="20%" stop-color="#b169db"/>
+            <stop offset="45%" stop-color="#f7d152"/>
+            <stop offset="65%" stop-color="#46cf71"/>
+            <stop offset="85%" stop-color="#0fbffa"/>
+            <stop offset="100%" stop-color="#0fbffa"/>
+        </linearGradient>
+			
+    </defs>
+    
+</svg>
+    <script src='https://unpkg.com/gsap@3/dist/gsap.min.js'></script>
+<script src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js'></script>
+<script src='https://unpkg.com/gsap@3/dist/SplitText.min.js'></script><script  src="./script.js"></script>
+
+  </body>
+  
+</html>
