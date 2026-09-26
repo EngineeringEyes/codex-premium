@@ -55,9 +55,44 @@ Anota la IP local de tu PC (ej. `192.168.1.10`).
 
 ## PASO 3 — Configurar el proxy en el teléfono
 
+### Opción A — Cable USB (recomendado si tienes depuración USB activa)
+
+Más estable que Wi-Fi: no necesitas conocer la IP del PC ni estar en la misma red.
+
+```bash
+# En el PC, con el teléfono conectado por USB
+adb reverse tcp:8080 tcp:8080
+```
+
+Esto redirige el puerto 8080 del teléfono → puerto 8080 del PC por el cable USB.
+
+Luego en el teléfono:
+- **Android → Ajustes → Wi-Fi → (mantén pulsada la red) → Modificar red:**
+  - Proxy: **Manual**
+  - Host: `127.0.0.1`
+  - Puerto: `8080`
+
+> El teléfono cree que el proxy está en sí mismo (`127.0.0.1`),
+> pero ADB reenvía el tráfico al PC por USB.
+
+Para verificar que el túnel está activo:
+```bash
+adb reverse --list
+# Debe mostrar: reverse tcp:8080 tcp:8080
+```
+
+Para desactivar al terminar:
+```bash
+adb reverse --remove tcp:8080
+```
+
+---
+
+### Opción B — Wi-Fi (sin cable)
+
 **Android → Ajustes → Wi-Fi → (mantén pulsada la red) → Modificar red:**
 - Proxy: **Manual**
-- Host: `192.168.1.10` (IP de tu PC)
+- Host: `192.168.1.10` (IP de tu PC en la red local)
 - Puerto: `8080`
 
 ---
@@ -145,6 +180,7 @@ Para cambiar a otro backend, edita `_image_url()` en `stickerly_ai_unlimited.py`
 | Síntoma | Causa probable | Solución |
 |---------|---------------|----------|
 | App no pasa por proxy | Proxy Wi-Fi no guardado | Re-verifica ajustes Wi-Fi |
+| `adb reverse` no funciona | USB debugging no activo | Activa depuración USB |
 | Error SSL en app | Cert CA no instalado | Repite PASO 4 |
 | Generación falla sin mensaje | Pinning adicional en APK | Usa Opción A (NSC patch) |
 | La imagen no carga en la app | outputUrl no accesible | Verifica conexión a pollinations.ai |
