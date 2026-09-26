@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    network_security_config.xml — parche para Sticker.ly APK
+    Copiar a:  stickerly_decoded/res/xml/network_security_config.xml
+    Permite que el certificado CA de mitmproxy sea confiable (Android 7+).
+    Reemplaza el archivo existente si ya hay uno.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system"/>
+            <certificates src="user"/>
+        </trust-anchors>
+    </base-config>
+</network-security-config>
