@@ -1,0 +1,11 @@
+{
+  "name": "codex-premium",
+  "owner": { "name": "EngineeringEyes" },
+  "plugins": [
+    {
+      "name": "contexto-guard",
+      "source": "./plugins/contexto-guard",
+      "description": "Aviso del uso de contexto al 70% y comandos /contexto y /permitir-compactar"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "extraKnownMarketplaces": {
+    "codex-premium": {
+      "source": { "source": "github", "repo": "EngineeringEyes/codex-premium" }
+    }
+  },
+  "enabledPlugins": {
+    "contexto-guard@codex-premium": true
+  }
+}

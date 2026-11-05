@@ -1,0 +1,6 @@
+{
+  "name": "contexto-guard",
+  "version": "0.1.0",
+  "description": "Gráfico del uso de contexto y aviso con botón Permitir antes de la compactación automática",
+  "types": "./types/index.d.ts"
+}
